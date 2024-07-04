@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Topbar from './components/Topbar';
+import Banner from './components/Banner';
+import Catalogue from './components/Catalogue';
+import { Button, Card, Carousel, Container, Form, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import products from './Prod';
+
+
+
+
+const prod = products;
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Topbar/>
+      <Banner/>
+     
+      <div className='container'>
+      <Catalogue products={prod}/>
+    </div>
+      
     </div>
   );
 }
